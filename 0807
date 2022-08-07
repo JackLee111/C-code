@@ -1,0 +1,95 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+
+struct Book
+{
+	char name[20]; //C语言程序设计
+	short price; //55
+};  //";"不可缺少
+void test()
+{
+	static int a = 1; //a 是一个静态的局部变量
+	a++;
+	printf("a=%d\n", a);
+}
+int main()
+{
+	//int a = 10;
+	//int b = a++; //后置++，先使用，再++
+	//int b = ++a;  //前置++，先++，再使用
+	//int b = a--;
+	//printf("a=%d b=%d\n", a,b);  //11、10 /  11、11
+
+	/*int a = 0;
+	int b = 5;
+	int c = a && b;
+	printf("c=%d", c);*/
+
+	/*int a = 3;
+	int b = 5;
+	int max = 0;
+	max = (a > b ? a : b);
+		printf("%d\n", max);*/
+
+	/*int arr[10] = { 0 };
+	arr[3];*/
+
+	/*int i = 0;
+	while (i < 5)
+	{
+		test();
+		i++;
+	}*/
+
+	//extern int g_val;
+	//printf("%d\n", g_val);
+
+	//int a = 9; //申请四个字节
+	//int* p = &a; //取地址
+	//有一种变量是用来存放地址的，叫指针变量
+	//printf("%p\n", &a);
+	//printf("%p\n", p);
+	//*p= 20 ;//-解引用操作符；
+	//printf("%d\n", a);
+
+	//char ch = 'w';
+	//char* pc = &ch;
+	//*pc = 'a';
+	//printf( "%c\n", ch);
+	//printf( "%p\n", pc);
+	//printf("%d\n", sizeof(pc));
+
+	//double a = 10.14;
+	//double* pd = &a; //p是一个指针变量
+	//*pd = 85.5;
+	//printf("%lf\n", a);
+	//printf("%p\n", pd);
+	//printf("%lf\n", *pd);
+	
+	//结构体
+	//人-复杂对象{名字；身高；年龄；身份证号码}
+	/*复杂对象 --结构体 - 我们自己创造出来的一种类型*/
+	
+
+	//利用结构体类型创建一个该类型的结构体变量
+	struct Book b1 = { "C语言程序设计", 55 };
+	struct Book* pb = &b1;
+	b1.price = 15;
+	strcpy(b1.name, "C++"); //strcpy-string copy -字符串拷贝-库函数-string.h
+	printf("书名：%s\n", b1.name);
+	printf("价格：%d\n", b1.price);
+	printf("%s\n", (*pb).name);
+	printf("%s\n", pb->name);
+
+
+	return 0;
+}
+//创建一个结构体类型
+/*
+struct Book
+{
+	char name[20]; //C语言程序设计
+	short price; //55
+};  //";"不可缺少
+*/
